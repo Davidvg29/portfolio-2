@@ -14,7 +14,7 @@ import { Link } from "react-router-dom"
 
 const HeroSection = ()=>{
     return(
-        <div className="flex justify-center">
+        <div className="flex justify-center p-8">
             <Card className="w-full max-w-6xl">
                 <div className="flex flex-col md:flex-row justify-center p-8 sm:pl-14 sm:pr-14">
                     <div className="w-full md:w-1/2">
