@@ -22,7 +22,7 @@ import {
 const Questions = ()=>{
     return(
         <div className="flex justify-center p-8">
-            <Card className="w-full  max-w-6xl">
+            <Card className="w-full max-w-6xl shadow-lg">
                 <div className="flex flex-col justify-center p-8 sm:pl-14 sm:pr-14">
                     <h2 className="text-4xl md:text-5xl font-bold ">Frequently Asked <br /> Questions</h2>
                     <h3 className="pr-5 mt-10">Have questions about our services? Find answers to the most common questions and learn how our team can enhance your creative process.</h3>
