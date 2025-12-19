@@ -81,7 +81,7 @@ const NavBar =() => {
 
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link to="/docs">Start Project</Link>
+            <Link to="/contact">Start Project</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 

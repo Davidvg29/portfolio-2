@@ -64,7 +64,7 @@ const LatestProjects = ()=>{
                 </Card>
             </div>
             <div className="flex justify-center mt-10">
-                <Link to="/"><Button className="cursor-pointer">View All Projects</Button></Link>
+                <Link to="/portfolio"><Button className="cursor-pointer">View All Projects</Button></Link>
             </div>
         </div>
     )
