@@ -21,7 +21,7 @@ import {
 
 const Questions = ()=>{
     return(
-        <div className="flex justify-center p-8">
+        <div className="mt-10 flex justify-center p-2 md:p-8">
             <Card className="w-full max-w-6xl shadow-lg">
                 <div className="flex flex-col justify-center p-8 sm:pl-14 sm:pr-14">
                     <h2 className="text-4xl md:text-5xl font-bold ">Frequently Asked <br /> Questions</h2>

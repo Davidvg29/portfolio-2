@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 const LatestProjects = ()=>{
     return(
-        <div className="mt-5  p-8">
+        <div className="mt-10 p-2 md:p-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Explore Our <br /> Latest Projects</h2>
             <h3 className="pr-5 mt-10">From AI-driven automation to custom marketplaces, our work helps businesses scale smarter. <br />Explore some of the platforms, tools, and solutions we've created for our clients and ourselves.</h3>
             <div className=" mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-3 place-items-center">

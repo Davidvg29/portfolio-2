@@ -14,8 +14,8 @@ import { Link } from "react-router-dom"
 
 const HeroSection = ()=>{
     return(
-        <div className="flex justify-center p-8">
-            <Card className="w-full max-w-6xl shadow-lg">
+        <div className="flex justify-center p-2 md:p-8 ">
+            <Card className="w-full max-w-6xl shadow-lg ">
                 <div className="flex flex-col md:flex-row justify-center p-8 sm:pl-14 sm:pr-14">
                     <div className="w-full md:w-1/2">
                         <CardHeader className="p-0 text-4xl md:text-6xl font-bold mb-8">Your AI-first <br /> Development <br /> Partner</CardHeader>

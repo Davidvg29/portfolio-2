@@ -36,8 +36,8 @@ const NavBar =() => {
       <NavigationMenuList className="flex-wrap">
 
         {/* LIST */}
-        <NavigationMenuItem className="hidden md:block">
-          <NavigationMenuTrigger>Resource</NavigationMenuTrigger>
+        <NavigationMenuItem className="hidden md:block ">
+          <NavigationMenuTrigger className="bg-transparent">Resource</NavigationMenuTrigger>
           <NavigationMenuContent className="mt-10 border-2">
             <ul className="grid w-[300px] gap-4">
               <li>
@@ -75,13 +75,13 @@ const NavBar =() => {
         {/* DOCS LINK */}
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link to="/portfolio">Portfolio</Link>
+            <Link to="/portfolio" className="bg-transparent">Portfolio</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link to="/contact">Start Project</Link>
+            <Link to="/contact" className="bg-transparent">Start Project</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 

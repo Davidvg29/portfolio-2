@@ -1,10 +1,11 @@
 import CardsProjects from "@/components/CardsProjects";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import MainLayout from "@/Layouts/MainLayout";
 
 const ProjectsPage = () => {
     return ( 
-        <>
+        <MainLayout>
             <Header/>
             <div className="mt-5  p-8">
                 <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Portfolio</h2>
@@ -12,7 +13,7 @@ const ProjectsPage = () => {
             </div>
             <CardsProjects/>
             <Footer/>
-        </>
+        </MainLayout>
      );
 }
  

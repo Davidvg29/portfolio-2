@@ -5,10 +5,11 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import LatestProjects from "@/components/LatestProjects";
 import Questions from "@/components/Questions";
+import MainLayout from "@/Layouts/MainLayout";
 
 const Home = () => {
     return ( 
-        <div>
+        <MainLayout>
             <Header />
             <HeroSection/>
             <LatestProjects/>
@@ -16,7 +17,7 @@ const Home = () => {
             <Questions/>
             <ContactSection/>
             <Footer/>
-        </div>
+        </MainLayout>
      );
 }
  
