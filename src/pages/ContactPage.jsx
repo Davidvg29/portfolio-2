@@ -1,7 +1,6 @@
 import MainLayout from "@/Layouts/MainLayout"
 import ContactForm from "@/components/ContactForm"
 
-
 const ContactPage = ()=>{
     return(
        <MainLayout>
