@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon, Menu } from "lucide-react"
+import { CircleCheckIcon, CircleHelpIcon, CircleIcon, Menu, Languages } from "lucide-react"
 
 import {
   NavigationMenu,
@@ -35,44 +35,9 @@ const NavBar =() => {
         <NavigationMenu viewport={false}>
       <NavigationMenuList className="flex-wrap">
 
-        {/* LIST */}
-        <NavigationMenuItem className="hidden md:block ">
-          <NavigationMenuTrigger className="bg-transparent">Resource</NavigationMenuTrigger>
-          <NavigationMenuContent className="mt-10 border-2">
-            <ul className="grid w-[300px] gap-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link to="#">
-                    <div className="font-medium">Resource</div>
-                    <div className="text-muted-foreground">
-                      Browse all components in the library.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
+        
 
-                <NavigationMenuLink asChild>
-                  <Link to="#">
-                    <div className="font-medium">Documentation</div>
-                    <div className="text-muted-foreground">
-                      Learn how to use the library.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-
-                <NavigationMenuLink asChild>
-                  <Link to="#">
-                    <div className="font-medium">Blog</div>
-                    <div className="text-muted-foreground">
-                      Read our latest blog posts.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        {/* DOCS LINK */}
+        {/* portfolio LINK */}
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link to="/portfolio" className="bg-transparent">Portfolio</Link>
@@ -83,6 +48,30 @@ const NavBar =() => {
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link to="/contact" className="bg-transparent">Start Project</Link>
           </NavigationMenuLink>
+        </NavigationMenuItem>
+
+        {/* language */}
+        <NavigationMenuItem className="hidden md:block ">
+          <NavigationMenuTrigger className="bg-transparent"><Languages className="m-2" size={18}/> Language</NavigationMenuTrigger>
+          <NavigationMenuContent className="mt-10 border-2 ">
+            <ul className="grid w-[150px] gap-4 ">
+              <li>
+                <NavigationMenuLink asChild>
+                  <Link to="#">
+                    <div className="font-medium">🇪🇸 - Spanish</div>
+                    
+                  </Link>
+                </NavigationMenuLink>
+
+                <NavigationMenuLink asChild>
+                  <Link to="#">
+                    <div className="font-medium">🇺🇸 - English</div>
+                    
+                  </Link>
+                </NavigationMenuLink>
+              </li>
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
 
       </NavigationMenuList>

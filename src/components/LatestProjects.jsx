@@ -26,18 +26,20 @@ console.log(projects);
             <h3 className="pr-5 mt-10">From AI-driven automation to custom marketplaces, our work helps businesses scale smarter. <br />Explore some of the platforms, tools, and solutions we've created for our clients and ourselves.</h3>
             <div className=" mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-3 place-items-center">
                 {projects.slice(0,3).map((p)=>(
-                    <Card className="w-full pt-0 rounded-3xl cursor-pointer shadow-lg hover:scale-102 transition delay-150 duration-300 ease-in-out">
+                    <Link to={`/portfolio/project/${p.name}`} className="w-full pt-0 rounded-3xl cursor-pointer shadow-lg hover:scale-102 transition delay-150 duration-300 ease-in-out">
+                        <Card >
                     <CardContent className="p-0 rounded-3xl">
-                        <img className="w-full h-48 object-cover rounded-t-3xl" src={p.img[0]} alt="" />
+                        <img className="w-full h-60 object-contain p-5 rounded-t-3xl" src={p.img[0]} alt="" />
                     </CardContent>
                     <CardHeader>
                         <CardTitle className="text-2xl font-bold">{p.name}</CardTitle>
-                        <CardDescription></CardDescription>
+                        <CardDescription>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est earum, at repudiandae, molestias eos, et quas officia quasi cumque aperiam aliquam laudantium atque iste! Asperiores veniam reiciendis dicta quaerat. Possimus?</CardDescription>
                     </CardHeader>
                     <CardFooter className="mb-5">
                     <Link to={p.demo[0]} className="flex items-center text-sm font-semibold">View Project <ArrowUpRight size={16} className="ml-1"/></Link>
                     </CardFooter>
                     </Card>
+                    </Link>
                 ))}
             </div>
             <div className="flex justify-center mt-10">
