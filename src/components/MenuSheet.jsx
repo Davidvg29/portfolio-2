@@ -33,24 +33,26 @@ export function MenuSheet() {
         </SheetTrigger>
         <SheetContent className="p-5">
           <SheetHeader>
-            <SheetTitle>AUTOMATIC</SheetTitle>
+            <SheetTitle>DAVID VALDEZ GRAMAJO</SheetTitle>
           </SheetHeader>
+          
+          <Separator />
+          <Link to="/portafolio" className="text-sm font-medium">Portafolio</Link>
+          <Link to="/contacto" className="text-sm font-medium">Iniciar proyecto</Link>
           <Separator/>
             <Accordion type="single" collapsible className="w-full" defaultValue="">
               <AccordionItem value="item-1">
-                <AccordionTrigger>Resource</AccordionTrigger>
+                <AccordionTrigger>Idioma</AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                  <p>Our flagship product combines cutting-edge technology with sleek
-                    design. Built with premium materials, it offers unparalleled
-                    performance and reliability.</p>
-                  <p>Key features include advanced processing capabilities, and an
-                    intuitive user interface designed for both beginners and experts.</p>
+                  <Link to="#">
+                    <div className="font-medium">🇪🇸 - Español</div>
+                  </Link>
+                  <Link to="#">
+                    <div className="font-medium">🇺🇸 - Ingles</div>
+                  </Link>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-          <Separator />
-          <Link to="/" className="text-sm font-medium">Portfolio</Link>
-          <Link to="/" className="text-sm font-medium">Start Project</Link>
           <Separator/>
           <Button className="mt-4 w-full">Contact Us</Button>
         </SheetContent>

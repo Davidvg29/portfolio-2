@@ -18,11 +18,11 @@ const HeroSection = ()=>{
             <Card className="w-full max-w-6xl shadow-lg ">
                 <div className="flex flex-col md:flex-row justify-center p-8 sm:pl-14 sm:pr-14">
                     <div className="w-full md:w-1/2">
-                        <CardHeader className="p-0 text-4xl md:text-6xl font-bold mb-8">Your AI-first <br /> Development <br /> Partner</CardHeader>
-                        <CardDescription className="mb-8">We build high-quality, scalable platforms—client portals, <br /> marketplaces, AI automations, and SaaS—using the best tools <br /> for the job, no shortcuts.</CardDescription>
+                        <CardHeader className="p-0 text-4xl md:text-6xl font-bold mb-8">Hola, soy David. <br /> Desarrollador <br /> de Software.</CardHeader>
+                        <CardDescription className="mb-8">Construyo sitios web, sistemas y automatizo tus procesos. <br /> Soluciones a medida, fáciles de usar y efectivas, <br /> para optimizar tu tiempo y recursos.</CardDescription>
                         <CardContent className="p-0 flex flex-col md:flex-row gap-4 md:items-center">
-                            <Link to="/" className="pr-2 flex items-center"><Button>Schedule Discovery Call</Button></Link>
-                            <Link to="/" className="pl-2 text-sm font-semibold">Learn more</Link>
+                            <Link to="/" className="pr-2 flex items-center"><Button>¡Empecemos un proyecto!</Button></Link>
+                            <Link to="/" className="pl-2 text-sm font-semibold">Leer más</Link>
                         </CardContent>
                     </div>
                     <div className=" w-1/2 flex justify-center items-center ">
