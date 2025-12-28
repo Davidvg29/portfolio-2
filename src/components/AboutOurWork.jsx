@@ -12,7 +12,7 @@ import { CircleDot, Rocket, Layers  } from 'lucide-react';
 
 const AboutOurWork = ()=>{
     return(
-        <div className=" mt-15 p-2 md:p-8">
+        <div className=" mt-15 p-2 md:p-8" id="aboutOurWork">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Unleash Your <br /> Business</h2>
             <h3 className="pr-5 mt-10">We build custom platforms and AI-powered tools to simplify your operations and help you scale. <br /> Our process makes it easy to bring your ideas to life.</h3>
             <div className=" mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-3 place-items-center">

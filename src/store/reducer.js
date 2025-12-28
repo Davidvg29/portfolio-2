@@ -211,8 +211,8 @@ let initialStore = {
             technologies: "Javascript | React | CSS | Sequelize | Express | Node | PostgreSQL | SQL | Axios"
         },
         {
-            name: "Aide Tienda",
-            nombre: "Aide Store",
+            name: "Aide Store",
+            nombre: "Aide Tienda",
             subtitle: "frontend",
             github: "https://github.com/Davidvg29/Aide-Tienda",
             demo: "https://aide-tienda.netlify.app/",
