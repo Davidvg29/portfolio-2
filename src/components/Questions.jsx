@@ -24,46 +24,41 @@ const Questions = ()=>{
         <div className="mt-10 flex justify-center p-2 md:p-8">
             <Card className="w-full max-w-6xl shadow-lg">
                 <div className="flex flex-col justify-center p-8 sm:pl-14 sm:pr-14">
-                    <h2 className="text-4xl md:text-5xl font-bold ">Frequently Asked <br /> Questions</h2>
-                    <h3 className="pr-5 mt-10">Have questions about our services? Find answers to the most common questions and learn how our team can enhance your creative process.</h3>
+                    <h2 className="text-4xl md:text-5xl font-bold ">Preguntas frecuentes</h2>
+                    <h3 className="pr-5 mt-10">Respuestas rápidas a las dudas más comunes.</h3>
                     <div className="mt-5">
                         <Accordion type="single" collapsible className="w-full" defaultValue="">
                         <AccordionItem value="item-1" className="mb-3">
-                            <AccordionTrigger className="cursor-pointer">What can I expect when we work together?</AccordionTrigger>
+                            <AccordionTrigger className="cursor-pointer">¿Cómo puedo pedir un presupuesto o empezar un proyecto?</AccordionTrigger>
                             <AccordionContent className="flex flex-col gap-4 text-balance">
-                                <p>We start with a discovery call to understand your needs, then provide a detailed proposal with timeline and cost estimates. Once approved, we begin development with regular updates and feedback sessions.</p>
+                                <p>¡Es muy fácil! Puedes contactarme a través del formulario haciendo <Link to="/contacto" className="font-medium underline">click aquí</Link> Cuéntame brevemente tu idea y agendaremos una llamada para definir los detalles.</p>
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2" className="mb-3">
-                            <AccordionTrigger className="cursor-pointer">How long do projects take to build?</AccordionTrigger>
+                            <AccordionTrigger className="cursor-pointer">¿Cuánto tiempo tarda en estar listo mi sitio web o aplicación? </AccordionTrigger>
                             <AccordionContent className="flex flex-col gap-4 text-balance">
-                                <p>Project timelines vary based on complexity. Simple websites might take 2-4 weeks, while complex platforms can take 3-6 months. We provide detailed timelines during the proposal phase.</p>
+                                <p>Depende de la complejidad del proyecto. Una web informativa puede tomar una semana, mientras que una plataforma personalizada puede requerir más tiempo. En nuestra primera charla, te daré un cronograma estimado y realista.</p>
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-3" className="mb-3">
-                            <AccordionTrigger className="cursor-pointer">What tools do you use to build?</AccordionTrigger>
+                            <AccordionTrigger className="cursor-pointer">¿Qué pasa cuando terminamos el desarrollo? ¿Ofreces soporte?</AccordionTrigger>
                             <AccordionContent className="flex flex-col gap-4 text-balance">
-                                <p>We use modern frameworks like React, Next.js, and Node.js, along with AI tools and cloud services. Our stack is tailored to each project's specific requirements.</p>
+                                <p>No te dejaré solo. Al finalizar, te enseñaré cómo administrar tu sitio. Además, ofrezco planes de mantenimiento para asegurarnos de que todo siga funcionando, actualizado y seguro con el paso del tiempo.</p>
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-4" className="mb-3">
-                            <AccordionTrigger className="cursor-pointer">How much does a typical project cost?</AccordionTrigger>
+                            <AccordionTrigger className="cursor-pointer">¿Necesito tener los textos y fotos listos antes de empezar?</AccordionTrigger>
                             <AccordionContent className="flex flex-col gap-4 text-balance">
-                                <p>Project costs vary widely based on requirements. Simple websites start around $5,000, while complex platforms can range from $25,000 to $100,000+. We provide detailed quotes after our discovery process.</p>
+                                <p> No es obligatorio para iniciar, pero sí ayuda mucho. Si aún no tienes el contenido, puedo guiarte sobre qué necesitamos o podemos trabajar con estructuras provisorias mientras preparas tu material.</p>
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-5" className="mb-3">
-                            <AccordionTrigger className="cursor-pointer">How do you manage payments?</AccordionTrigger>
+                            <AccordionTrigger className="cursor-pointer">¿Mi sitio web se verá bien en celulares?</AccordionTrigger>
                             <AccordionContent className="flex flex-col gap-4 text-balance">
-                                <p>We typically work with a 50% upfront deposit and the remaining 50% upon project completion. For larger projects, we may establish milestone-based payment schedules.</p>
+                                <p>Absolutamente. Diseño con un enfoque 'Mobile First' (móvil primero). Tu sitio se adaptará perfectamente a celulares, tablets y computadoras, garantizando que tus clientes tengan una excelente experiencia sin importar desde dónde lo vean.</p>
                             </AccordionContent>
                         </AccordionItem>
-                        <AccordionItem value="item-6" className="mb-3">
-                            <AccordionTrigger className="cursor-pointer">Can you manage my app's technical support with users?</AccordionTrigger>
-                            <AccordionContent className="flex flex-col gap-4 text-balance">
-                                <p>Yes, we offer ongoing technical support and maintenance packages. These can include user support, bug fixes, feature updates, and performance monitoring.</p>
-                            </AccordionContent>
-                        </AccordionItem>
+                        
                         </Accordion>
                     </div>
                 </div>

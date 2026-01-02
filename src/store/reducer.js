@@ -4,8 +4,23 @@ let initialStore = {
     language: "SPANISH",
     experiences : [
         {
+            actually: true,
             name: "Tucumán Water Company",
             nombre: "Sociedad Aguas del Tucumán",
+            subtitle: "Software Developer | DevOps",
+            github: "",
+            demo:['https://aguasdeltucuman.com.ar/'],
+            img: [
+                'https://res.cloudinary.com/dxxte9caz/image/upload/v1767379754/sat_c19d6r.png'
+            ],
+            description: "Migration from an old platform to a new web solution for property management and monthly invoice control. It provides support for online payments through three modern methods, management of cash plans, and a secure experience thanks to anti-bot systems, email verification, authentication, authorization, and connections with external servers.",
+            descripcion:"Mantenimiento y optimización de la plataforma web, integración de nuevos sistemas para automatizar y agilizar tareas internas, e implementación de prácticas DevOps que garantizan la eficiencia, estabilidad y seguridad de los servicios digitales.",
+            technologies: ""
+        },
+        {
+            actually: false,
+            name: "Tucumán Water Company",
+            nombre: "Portal Web con Gestión Interna",
             subtitle: "Fullstack | DevOps",
             github: "",
             demo:['https://aguasdeltucuman.com.ar/'],
@@ -28,6 +43,7 @@ let initialStore = {
             technologies: "Node.js | React | PostgreSQL | Nginx |"
         },
         {
+            actually: false,
             name: "Interactive Totem",
             nombre: "Totem interactivo",
             subtitle: "Fullstack",
@@ -44,6 +60,7 @@ let initialStore = {
             technologies: "React | Node.js | Cobol"
         }, 
         {
+            actually: false,
             name: "WhatsApp bot",
             nombre: "Bot de WhatsApp",
             subtitle: "Backend",
@@ -59,6 +76,7 @@ let initialStore = {
             technologies: "Twilio | Node.js"
         }, 
         {
+            actually: false,
             name: "Functionality for quick access to customer invoices",
             nombre: "Funcionalidad para acceso rápido a facturas de clientes",
             subtitle: "Fullstack",
@@ -75,6 +93,7 @@ let initialStore = {
             technologies: "HTML5 | CSS3"
         }, 
         {
+            actually: false,
             name: "Landing page 3 Sportsbet",
             nombre: "Pagina de aterrizaje 3 de Sportsbet",
             subtitle: "Frontend",
@@ -95,6 +114,7 @@ let initialStore = {
             technologies: "HTML5 | CSS3"
         }, 
         {
+            actually: false,
             name: "Landings page Sportsbet ",
             nombre: "Paginas de aterrizaje de Sportsbet",
             subtitle: "Frontend",
@@ -128,6 +148,7 @@ let initialStore = {
         //     technologies: ""
         // }, 
     {
+        actually: false,
         name: "SwaplyAr",
         nombre: "SwaplyAr",
         subtitle: "Frontend",
@@ -142,6 +163,7 @@ let initialStore = {
         technologies: "Javascript | RESTfull api | HTML | CSS"
     }, 
     {
+        actually: false,
         name: "PDF Generator API",
         nombre: "API generador de PDF",
         subtitle: "Backend",
@@ -156,6 +178,7 @@ let initialStore = {
         technologies: "Node.js | Express | PDFkit"
     }, 
      {
+        actually: false,
         name:"Ecommerce E-GYM",
         nombre:"Comercio electronico E-GYM",
         subtitle:"Fullstack",
@@ -182,6 +205,7 @@ let initialStore = {
         technologies:"React, Cloudinary, Formik, Toastify, Tailwind CSS, Daisy UI JWT, Mercado Pago api, Express, Mongoose, Nodemailer, Javascript",    
      },
      {
+        actually: false,
         name: "CMS-Content management server with user authentication",
         nombre: "CMS-Servidor de gestión de contenidos con autenticación de usuario",
         subtitle: "Backend",
@@ -195,6 +219,7 @@ let initialStore = {
         technologies: "Javascript | Sequelize | Express | Node | PostgreSQL | SQL | Cloudinary | Multer | Firebase"
     },   
      {
+        actually: false,
             name: "Banderactivity",
             nombre:"Banderactividad",
             subtitle: "fullstack",
@@ -211,6 +236,7 @@ let initialStore = {
             technologies: "Javascript | React | CSS | Sequelize | Express | Node | PostgreSQL | SQL | Axios"
         },
         {
+            actually: false,
             name: "Aide Store",
             nombre: "Aide Tienda",
             subtitle: "frontend",
@@ -225,6 +251,7 @@ let initialStore = {
             technologies: "Javascript | HTML | CSS"
         },
         {
+            actually: false,
             name: "BienveniDOG",
             nombre:"BienveniDOG",
             subtitle: "fullstack",
@@ -241,6 +268,7 @@ let initialStore = {
             technologies: "Javascript | React | CSS | Sequelize | Express | Node | PostgreSQL | SQL | Axios"
         },
         {
+            actually: false,
             name: "Valgra Indumentaria",
             nombre:"Valgra Indumentaria",
             subtitle: "Frontend",
@@ -258,6 +286,7 @@ let initialStore = {
             technologies: "Javascript | HTML | CSS"
         },
         {
+            actually: false,
             name: "Login Loan System",
             nombre:"Login para Sistema de Prestamos",
             subtitle: "Web layout",
@@ -271,6 +300,7 @@ let initialStore = {
             technologies: "HMTL | CSS"
         },
         {
+            actually: false,
             name: "Rick and Morty",
             nombre:"Rick and Morty",
             subtitle: "fullstack",

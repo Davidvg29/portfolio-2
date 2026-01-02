@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Link } from "react-router-dom"
+import img from "@/assets/imgPresentation.svg"
 
 const HeroSection = ()=>{
     return(
@@ -26,7 +27,7 @@ const HeroSection = ()=>{
                         </CardContent>
                     </div>
                     <div className=" w-1/2 flex justify-center items-center ">
-                        <img className="w-82 h-82 max-md:hidden" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_BDOeBmoJgIDcVbz6Kf1h2fqpgvr5/uMrYbVYunzD2-lMHwTqpjV/public/purple-circle-wave-static.png" alt="" />
+                        <img className="w-82 h-82 max-md:hidden" src={img} alt="" />
                     </div>
                 </div>
             </Card>
