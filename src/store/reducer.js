@@ -1,7 +1,12 @@
-import {CHANGE_LANGUAGE} from "./action-types"
+import {CHANGE_LANGUAGE, ALERT_MESSAGE} from "./action-types"
 
 let initialStore = {
     language: "SPANISH",
+    alertMessage: {
+      active: false,
+      status:null,
+      message:""
+    },
     experiences : [
         {
             actually: true,
@@ -396,8 +401,17 @@ let initialStore = {
 
 const reducer = (state = initialStore, action) => {
           switch (action.type) {
-              case CHANGE_LANGUAGE:
-                  return {...state, language: action.payload}
+            case CHANGE_LANGUAGE:
+                return {...state, language: action.payload}
+            case ALERT_MESSAGE:
+                return {
+                    ...state, 
+                    alertMessage: {
+                        active: action.payload.active,
+                        status: action.payload.status,
+                        message: action.payload.message
+                    }
+                };
               default:
                 return {...state};
                   

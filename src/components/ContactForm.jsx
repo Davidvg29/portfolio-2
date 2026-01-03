@@ -16,18 +16,51 @@ import { ArrowRight } from 'lucide-react';
 import { Textarea } from "@/components/ui/textarea"
 import sendContactForm from "@/services/sendContactForm";
 import { useState } from "react";
+import validationContactForm from "@/validations/validationContactForm";
+import AlertMessage from "./AlertMessage";
+import { useDispatch } from "react-redux";
+import { alertMessage } from "@/store/action";
+import Loading from "./Loading";
 
 const ContactForm = ()=>{
+    const dispatch = useDispatch();
 
-    const [data, setData] = useState({})
+    const [loading, setLoading] = useState(false);
+
+    const [data, setData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
+    })
 
     const changeInputs = (e) => {
         setData({...data, [e.target.name]: e.target.value})
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        sendContactForm(data)
+        try {
+            const validation = validationContactForm(data)
+            if(validation !== true){
+                return dispatch(alertMessage(true, false, validation))
+            }
+            setLoading(true);
+            const sendForm = await sendContactForm(data)
+            if(sendForm){
+                setData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    message: ""
+                })
+                setLoading(false);
+                dispatch(alertMessage(true, true, "¡Mensaje enviado con éxito!"))
+            }
+        } catch (error) {
+            setLoading(false);
+            dispatch(alertMessage(true, false, error.message))
+        }
     }
 
     return(
@@ -37,12 +70,12 @@ const ContactForm = ()=>{
                     <form action="" className="ml-5 mr-5">
                         <div className="grid w-full items-center gap-3">
                             <Label htmlFor="name">¿Cuál es tu nombre?</Label>
-                            <Input type="text" id="name" name="name" onChange={changeInputs} className="h-10 bg-zinc-500" />
+                            <Input type="text" id="name" value={data.name} name="name" onChange={changeInputs} className="h-10 bg-zinc-500" />
                         </div>
 
                         <div className="grid w-full items-center gap-3 mt-6">
                             <Label htmlFor="email">¿Cuál es tu correo electrónico?</Label>
-                            <Input type="email" id="email" name="email" onChange={changeInputs} className="h-10 bg-zinc-500" />
+                            <Input type="email" id="email" value={data.email} name="email" onChange={changeInputs} className="h-10 bg-zinc-500" />
                         </div>
 
                         <div className="grid w-full items-center gap-3 mt-6">
@@ -50,6 +83,7 @@ const ContactForm = ()=>{
                             <Input 
                                 type="tel" 
                                 id="phone" 
+                                value={data.phone}
                                 name="phone"
                                 onChange={changeInputs}
                                 className="h-10 bg-zinc-500" 
@@ -58,7 +92,7 @@ const ContactForm = ()=>{
 
                         <div className="grid w-full gap-3 mt-6">
                             <Label htmlFor="message">Escribe aquí tu idea y/o consulta</Label>
-                            <Textarea id="message" name="message"onChange={changeInputs}  className="max-h-30 resize-none bg-zinc-500"/>
+                            <Textarea id="message" value={data.message} name="message" onChange={changeInputs}  className="max-h-30 resize-none bg-zinc-500"/>
                         </div>
 
                         <div className="grid w-full items-center gap-3 mt-10 mb-5">
@@ -66,6 +100,7 @@ const ContactForm = ()=>{
                         </div>
                     </form>
                 </Card>
+                {loading ? <Loading message="Enviando mensaje..." /> : false}
             </div>
     )
 }

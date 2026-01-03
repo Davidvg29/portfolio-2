@@ -1,2 +1,2 @@
 export const CHANGE_LANGUAGE = "CHANGE_LANGUAGE"
-
+export const ALERT_MESSAGE = "ALERT_MESSAGE"

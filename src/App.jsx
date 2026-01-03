@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import ContactPage from './pages/ContactPage'
 import ProjectOnePage from './pages/ProjectsOnePage'
 import PageNotFound from './pages/PageNotFound'
+import AlertMessage from './components/AlertMessage'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/contacto" element={<ContactPage/>} />
         <Route path="*" element={<PageNotFound/>} />
       </Routes>
+      <AlertMessage/>
     </div>
   )
 }
