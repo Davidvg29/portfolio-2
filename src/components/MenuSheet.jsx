@@ -54,7 +54,7 @@ export function MenuSheet() {
               </AccordionItem>
             </Accordion>
           <Separator/>
-          <Button className="mt-4 w-full">Contact Us</Button>
+          <Link to="/contacto"><Button className="mt-4 w-full">Contactarme</Button></Link>
         </SheetContent>
       </Sheet>
     </div>
