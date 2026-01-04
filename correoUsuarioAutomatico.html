@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación de Contacto</title>
+  <style>
+    /* Reset y fuentes */
+    body { margin: 0; padding: 0; width: 100%; background-color: #f4f4f5; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border: 1px solid #e4e4e7;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+    
+    .content { padding: 40px 40px 20px 40px; color: #09090b; }
+    
+    /* Tipografía */
+    h1 { font-size: 20px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 24px; color: #18181b; }
+    p { font-size: 15px; line-height: 1.6; color: #3f3f46; margin-bottom: 16px; }
+
+    /* Estilo del resumen del mensaje */
+    .message-box {
+      background-color: #fafafa;
+      border: 1px solid #e4e4e7;
+      border-radius: 6px;
+      padding: 16px;
+      margin: 24px 0;
+    }
+    .message-label { font-size: 12px; font-weight: 600; color: #71717a; text-transform: uppercase; display: block; margin-bottom: 8px; }
+    .message-text { font-family: monospace; font-size: 13px; color: #27272a; font-style: italic; }
+
+    .button {
+      display: inline-block;
+      background-color: #18181b;
+      color: #ffffff !important;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="content">
+      <h1>Hola, {{name}}</h1>
+      <p>Muchas gracias por visitar mi portafolio y por tu interés en mi trabajo.</p>
+      <p>Te confirmo que he recibido tu mensaje correctamente. Estoy revisando tu consulta y normalmente respondo en un plazo de <strong>24 a 48 horas</strong>.</p>
+      <p>Dado que me facilitaste tu número (<strong>{{phone}}</strong>), también podré contactarte por esa vía si necesitamos agilizar la comunicación.</p>
+
+      <div class="message-box">
+        <span class="message-label">Resumen de tu mensaje:</span>
+        <div class="message-text">"{{message}}"</div>
+      </div>
+
+      <p>Mientras esperas mi respuesta, te invito a seguir explorando mis últimos desarrollos.</p>
+
+      <center>
+        <a href="https://davidvaldezgramajo.com.ar/" class="button">Volver al Portafolio</a>
+      </center>
+    </div>
+
+    <div style="background-color: #fafafa; padding: 0 40px 40px 40px; text-align: center;">
+      
+      <div style="border-top: 1px solid #e4e4e7; margin: 0 auto 30px auto; width: 100%;"></div>
+
+      <table align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto 20px auto;">
+        <tr>
+          <td style="padding: 0 15px;">
+            <a href="https://www.linkedin.com/in/davidvaldezgramajo/" target="_blank" style="text-decoration: none;">
+              <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn" width="24" height="24" style="display: block; opacity: 0.8;">
+            </a>
+          </td>
+          <td style="padding: 0 15px;">
+            <a href="https://github.com/Davidvg29" target="_blank" style="text-decoration: none;">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="24" height="24" style="display: block; opacity: 0.8;">
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <p style="margin: 0 0 10px 0; font-size: 14px; color: #71717a;">
+        <span style="color: #09090b; font-weight: 600;">David Valdez Gramajo</span>
+        <span style="margin: 0 8px; opacity: 0.3;">|</span>
+        <em style="font-weight: 500;">Desarrollador de Software</em>
+      </p>
+
+      <p style="margin: 20px 0 0 0; font-size: 12px; color: #a1a1aa;">
+        &copy; 2026 David Valdez Gramajo. Todos los derechos reservados.<br>
+        Tucumán, Argentina.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
