@@ -12,10 +12,14 @@ import {
 } from "@/components/ui/navigation-menu"
 import { useEffect, useState } from "react"
 import { MenuSheet } from "./MenuSheet"
+import { useDispatch, useSelector } from "react-redux"
+import { alertMessage, changeLanguage } from "@/store/action"
 
 const NavBar =() => {
 
   const [sizeWidth, setSizeWidth] = useState(window.innerWidth)
+  const dispatch = useDispatch()
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,6 +32,16 @@ const NavBar =() => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const handleLanguage = ()=>{
+    if(language === "SPANISH"){
+      dispatch(changeLanguage("ENGLISH"))
+      dispatch(alertMessage(true, false, "¡Uy! Lo siento, aún no he configurado la versión en inglés. ¡Inténtalo de nuevo pronto! | Oops! Sorry, I haven't set up the English version yet. Try again soon!."))
+    }else{
+      dispatch(changeLanguage("SPANISH"))
+      dispatch(alertMessage(true, false, "¡Uy! Lo siento, aún no he configurado la versión en inglés. ¡Inténtalo de nuevo pronto! | Oops! Sorry, I haven't set up the English version yet. Try again soon!."))
+    }
+  }  
 
   return (
     <>
@@ -49,20 +63,16 @@ const NavBar =() => {
 
         {/* language */}
         <NavigationMenuItem className="hidden md:block ">
-          <NavigationMenuTrigger className="bg-transparent"><Languages className="m-2" size={18}/> Idioma</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="bg-transparent cursor-pointer"><Languages className="m-2" size={18}/> Idioma</NavigationMenuTrigger>
           <NavigationMenuContent className="mt-10 border-2 ">
             <ul className="grid w-[150px] gap-4 ">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link to="#">
-                    <div className="font-medium">🇪🇸 - Spanish</div>
-                  </Link>
+                    <div className="font-medium cursor-pointer" onClick={handleLanguage}>🇪🇸 - Spanish</div>
                 </NavigationMenuLink>
 
                 <NavigationMenuLink asChild>
-                  <Link to="#">
-                    <div className="font-medium">🇺🇸 - English</div>
-                  </Link>
+                    <div className="font-medium cursor-pointer" onClick={handleLanguage}>🇺🇸 - English</div>
                 </NavigationMenuLink>
               </li>
             </ul>
