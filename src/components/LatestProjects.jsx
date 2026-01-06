@@ -6,9 +6,6 @@ import CardProject from "./CardProject";
 const LatestProjects = ()=>{
     const projects = useSelector(state=>state.experiences)
 
-console.log(projects);
-
-
     return(
         <div className="mt-10 p-2 md:p-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Explora mis trabajos y <br /> últimos proyectos</h2>

@@ -3,7 +3,6 @@ import CardProject from "./CardProject";
 
 const CardsProjects = ()=>{
     const projects = useSelector(state=>state.experiences)
-    console.log(projects);
     
     return(
         <div className="p-2 md:p-8">

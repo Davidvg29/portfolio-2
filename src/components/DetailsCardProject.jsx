@@ -20,7 +20,6 @@ import {
 import { ArrowUpRight, Github  } from 'lucide-react';
 
 const DetailsCardProject = ({project}) => {
-    console.log(project);
     
     const demos = Array.isArray(project.demo)
   ? project.demo
