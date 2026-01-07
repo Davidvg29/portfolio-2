@@ -20,6 +20,8 @@ import { Menu } from 'lucide-react';
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { changeLanguage } from "@/store/action"
+import { useState } from "react";
+import Loading from "./Loading";
 
 // 1. DICCIONARIO DE TEXTOS (Igual que en NavBar)
 const TEXTS = {
@@ -45,17 +47,21 @@ const TEXTS = {
 
 export function MenuSheet() {
   const dispatch = useDispatch();
-  
+  const [loader, setLoader] = useState(false);
   // Obtenemos idioma (con fallback a 'SPANISH')
   const language = useSelector(state => state.language) || 'SPANISH';
   const t = TEXTS[language];
 
   // 2. LÓGICA DE CAMBIO DE IDIOMA
-  const handleLanguage = (newLang) => {
-    if (language !== newLang) {
-      dispatch(changeLanguage(newLang));
+  const handleLanguage = (newLanguage)=>{
+    if(language != newLanguage){
+      setLoader(true)
+      setTimeout(() => {
+        dispatch(changeLanguage(newLanguage))
+        setLoader(false)
+      }, 500);
     }
-  }
+  }  
 
   return (
     <div>
@@ -118,6 +124,7 @@ export function MenuSheet() {
           
         </SheetContent>
       </Sheet>
+      {loader ? <Loading message={language === 'SPANISH' ? "Cambiando idioma..." : "Changing language..."}/> : null}
     </div>
   )
 }

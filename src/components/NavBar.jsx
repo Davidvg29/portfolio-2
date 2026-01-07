@@ -14,12 +14,14 @@ import { useEffect, useState } from "react"
 import { MenuSheet } from "./MenuSheet"
 import { useDispatch, useSelector } from "react-redux"
 import { alertMessage, changeLanguage } from "@/store/action"
+import Loading from "./Loading"
 
 const NavBar =() => {
 
   const [sizeWidth, setSizeWidth] = useState(window.innerWidth)
   const dispatch = useDispatch()
   const language = useSelector(state => state.language)
+  const [loader, setLoader] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,8 +37,11 @@ const NavBar =() => {
 
   const handleLanguage = (newLanguage)=>{
     if(language != newLanguage){
-      return dispatch(changeLanguage(newLanguage))
-      // dispatch(alertMessage(true, false, "¡Uy! Lo siento, aún no he configurado la versión en inglés. ¡Inténtalo de nuevo pronto! | Oops! Sorry, I haven't set up the English version yet. Try again soon!."))
+      setLoader(true)
+      setTimeout(() => {
+        dispatch(changeLanguage(newLanguage))
+        setLoader(false)
+      }, 500);
     }
   }  
 
@@ -112,6 +117,7 @@ const NavBar =() => {
       ) : (
         <MenuSheet/>
       )}
+      {loader ? <Loading message={language === 'SPANISH' ? "Cambiando idioma..." : "Changing language..."}/> : null}
     </>
   )
 }

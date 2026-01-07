@@ -40,7 +40,7 @@ const CardProject = ({project, index}) => {
                                     : project.name
                                 }
                             </CardTitle>
-                            <CardDescription className="h-15 overflow-auto">
+                            <CardDescription className="line-clamp-2">
                                 {
                                     language === 'SPANISH' 
                                     ? project.descripcion 
