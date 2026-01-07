@@ -18,13 +18,13 @@ import sendContactForm from "@/services/sendContactForm";
 import { useState } from "react";
 import validationContactForm from "@/validations/validationContactForm";
 import AlertMessage from "./AlertMessage";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { alertMessage } from "@/store/action";
 import Loading from "./Loading";
 
 const ContactForm = ()=>{
     const dispatch = useDispatch();
-
+    const language = useSelector((state)=>state.language);
     const [loading, setLoading] = useState(false);
 
     const [data, setData] = useState({
@@ -41,7 +41,7 @@ const ContactForm = ()=>{
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const validation = validationContactForm(data)
+            const validation = validationContactForm(data, language)
             if(validation !== true){
                 return dispatch(alertMessage(true, false, validation))
             }
@@ -66,20 +66,44 @@ const ContactForm = ()=>{
     return(
         <div className="flex justify-center mb-10">
                 <Card className="w-full sm:w-1/2 p-5 md:m-5  bg-zinc-600 text-white">
-                    <CardHeader className="mt-5">Completa el formulario con tus datos, cuéntame brevemente tu idea o desafío y analicemos juntos cómo hacerlo realidad.</CardHeader>
+                    <CardHeader className="mt-5">
+                        {
+                            language === "SPANISH"
+                            ? "Completa el formulario con tus datos, cuéntame brevemente tu idea o desafío y analicemos juntos cómo hacerlo realidad."
+                            : "Fill out the form with your information, briefly tell me about your idea or challenge, and let's analyze together how to make it a reality."
+                        }
+                    </CardHeader>
                     <form action="" className="ml-5 mr-5">
                         <div className="grid w-full items-center gap-3">
-                            <Label htmlFor="name">¿Cuál es tu nombre?</Label>
+                            <Label htmlFor="name">
+                                {
+                                    language === "SPANISH"
+                                    ? "¿Cuál es tu nombre?"
+                                    : "What is your name?"
+                                }
+                            </Label>
                             <Input type="text" id="name" value={data.name} name="name" onChange={changeInputs} className="h-10 bg-zinc-500" />
                         </div>
 
                         <div className="grid w-full items-center gap-3 mt-6">
-                            <Label htmlFor="email">¿Cuál es tu correo electrónico?</Label>
+                            <Label htmlFor="email">
+                                {
+                                    language === "SPANISH"
+                                    ? "¿Cuál es tu correo electrónico?"
+                                    : "What is your email?"
+                                }
+                            </Label>
                             <Input type="email" id="email" value={data.email} name="email" onChange={changeInputs} className="h-10 bg-zinc-500" />
                         </div>
 
                         <div className="grid w-full items-center gap-3 mt-6">
-                            <Label htmlFor="phone">¿Cuál es tu número de teléfono?</Label>
+                            <Label htmlFor="phone">
+                                {
+                                    language === "SPANISH"
+                                    ? "¿Cuál es tu número de teléfono?"
+                                    : "What is your phone number?"
+                                }
+                            </Label>
                             <Input 
                                 type="tel" 
                                 id="phone" 
@@ -91,12 +115,23 @@ const ContactForm = ()=>{
                         </div>
 
                         <div className="grid w-full gap-3 mt-6">
-                            <Label htmlFor="message">Escribe aquí tu idea y/o consulta</Label>
+                            <Label htmlFor="message">
+                                {
+                                    language === "SPANISH"
+                                    ? "Escribe aquí tu idea y/o consulta"
+                                    : "Write your idea and/or question here."
+                                }
+                            </Label>
                             <Textarea id="message" value={data.message} name="message" onChange={changeInputs}  className="max-h-30 resize-none bg-zinc-500"/>
                         </div>
 
                         <div className="grid w-full items-center gap-3 mt-10 mb-5">
-                            <Button className="w-32 bg-white text-black hover:text-white cursor-pointer" onClick={handleSubmit}>Enviar <ArrowRight/></Button>
+                            <Button className="w-32 bg-white text-black hover:text-white cursor-pointer" onClick={handleSubmit}>
+                                {
+                                    language === "SPANISH" ? "Enviar" : "Send"
+                                }
+                                <ArrowRight/>
+                            </Button>
                         </div>
                     </form>
                 </Card>

@@ -1,7 +1,9 @@
 import {CHANGE_LANGUAGE, ALERT_MESSAGE} from "./action-types"
 
+const savedLanguage = localStorage.getItem("david_portfolio_lang");
+
 let initialStore = {
-    language: "SPANISH",
+    language: savedLanguage || "SPANISH",
     alertMessage: {
       active: false,
       status:null,
@@ -18,13 +20,13 @@ let initialStore = {
             img: [
                 'https://res.cloudinary.com/dxxte9caz/image/upload/v1767379754/sat_c19d6r.png'
             ],
-            description: "Migration from an old platform to a new web solution for property management and monthly invoice control. It provides support for online payments through three modern methods, management of cash plans, and a secure experience thanks to anti-bot systems, email verification, authentication, authorization, and connections with external servers.",
+            description: "Maintenance and optimization of the web platform, integration of new systems to automate and streamline internal tasks, and implementation of DevOps practices that guarantee the efficiency, stability and security of digital services.",
             descripcion:"Mantenimiento y optimización de la plataforma web, integración de nuevos sistemas para automatizar y agilizar tareas internas, e implementación de prácticas DevOps que garantizan la eficiencia, estabilidad y seguridad de los servicios digitales.",
             technologies: ""
         },
         {
             actually: false,
-            name: "Tucumán Water Company",
+            name: "Internally managed web portal",
             nombre: "Portal Web con Gestión Interna",
             subtitle: "Fullstack | DevOps",
             github: "",
