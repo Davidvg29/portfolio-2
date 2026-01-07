@@ -1,12 +1,7 @@
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -23,38 +18,104 @@ import {
 
 import { Menu } from 'lucide-react';
 import { Link } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { changeLanguage } from "@/store/action"
+
+// 1. DICCIONARIO DE TEXTOS (Igual que en NavBar)
+const TEXTS = {
+  SPANISH: {
+    title: "DAVID VALDEZ GRAMAJO",
+    portfolio: "Portafolio",
+    startProject: "Iniciar proyecto",
+    languageLabel: "Idioma",
+    spanishOption: "🇪🇸 - Español",
+    englishOption: "🇺🇸 - Inglés",
+    contactBtn: "Contactarme"
+  },
+  ENGLISH: {
+    title: "DAVID VALDEZ GRAMAJO",
+    portfolio: "Portfolio",
+    startProject: "Start project",
+    languageLabel: "Language",
+    spanishOption: "🇪🇸 - Spanish",
+    englishOption: "🇺🇸 - English",
+    contactBtn: "Contact Me"
+  }
+}
 
 export function MenuSheet() {
+  const dispatch = useDispatch();
+  
+  // Obtenemos idioma (con fallback a 'SPANISH')
+  const language = useSelector(state => state.language) || 'SPANISH';
+  const t = TEXTS[language];
+
+  // 2. LÓGICA DE CAMBIO DE IDIOMA
+  const handleLanguage = (newLang) => {
+    if (language !== newLang) {
+      dispatch(changeLanguage(newLang));
+    }
+  }
+
   return (
     <div>
       <Sheet>
         <SheetTrigger asChild className="p-5">
-          <Button variant="outline" className="border-none shadow-none"><Menu className="w-6! h-6!"/></Button>
+          <Button variant="outline" className="border-none shadow-none">
+            <Menu className="w-6 h-6"/> {/* Quité los ! que pueden dar error de sintaxis en algunos linters */}
+          </Button>
         </SheetTrigger>
+        
         <SheetContent className="p-5">
           <SheetHeader>
-            <SheetTitle>DAVID VALDEZ GRAMAJO</SheetTitle>
+            <SheetTitle>{t.title}</SheetTitle>
           </SheetHeader>
           
-          <Separator />
-          <Link to="/portafolio" className="text-sm font-medium">Portafolio</Link>
-          <Link to="/contacto" className="text-sm font-medium">Iniciar proyecto</Link>
+          <Separator className="my-4" />
+          
+          {/* Agregué este div flex para que los links se listen verticalmente con espacio */}
+          <div className="flex flex-col gap-4 mb-4">
+            <Link to="/portafolio" className="text-sm font-medium">
+              {t.portfolio}
+            </Link>
+            <Link to="/contacto" className="text-sm font-medium">
+              {t.startProject}
+            </Link>
+          </div>
+
           <Separator/>
+          
             <Accordion type="single" collapsible className="w-full" defaultValue="">
               <AccordionItem value="item-1">
-                <AccordionTrigger>Idioma</AccordionTrigger>
+                <AccordionTrigger>{t.languageLabel}</AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                  <Link to="#">
-                    <div className="font-medium">🇪🇸 - Español</div>
-                  </Link>
-                  <Link to="#">
-                    <div className="font-medium">🇺🇸 - Ingles</div>
-                  </Link>
+                    
+                    {/* Opción Español */}
+                    <div 
+                      className={`font-medium cursor-pointer p-2 rounded hover:bg-slate-100 ${language === 'SPANISH' ? 'bg-slate-100 font-bold' : ''}`}
+                      onClick={() => handleLanguage('SPANISH')}
+                    >
+                      {t.spanishOption}
+                    </div>
+
+                    {/* Opción Inglés */}
+                    <div 
+                      className={`font-medium cursor-pointer p-2 rounded hover:bg-slate-100 ${language === 'ENGLISH' ? 'bg-slate-100 font-bold' : ''}`}
+                      onClick={() => handleLanguage('ENGLISH')}
+                    >
+                      {t.englishOption}
+                    </div>
+
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-          <Separator/>
-          <Link to="/contacto"><Button className="mt-4 w-full">Contactarme</Button></Link>
+            
+          <Separator className="mt-4"/>
+          
+          <Link to="/contacto">
+            <Button className="mt-4 w-full">{t.contactBtn}</Button>
+          </Link>
+          
         </SheetContent>
       </Sheet>
     </div>

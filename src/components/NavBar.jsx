@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon, Menu, Languages } from "lucide-react"
+import { CircleCheckIcon, CircleHelpIcon, CircleIcon, Menu, Languages, Check } from "lucide-react"
 
 import {
   NavigationMenu,
@@ -33,15 +33,31 @@ const NavBar =() => {
     };
   }, []);
 
-  const handleLanguage = ()=>{
-    if(language === "SPANISH"){
-      dispatch(changeLanguage("ENGLISH"))
-      dispatch(alertMessage(true, false, "¡Uy! Lo siento, aún no he configurado la versión en inglés. ¡Inténtalo de nuevo pronto! | Oops! Sorry, I haven't set up the English version yet. Try again soon!."))
-    }else{
-      dispatch(changeLanguage("SPANISH"))
-      dispatch(alertMessage(true, false, "¡Uy! Lo siento, aún no he configurado la versión en inglés. ¡Inténtalo de nuevo pronto! | Oops! Sorry, I haven't set up the English version yet. Try again soon!."))
+  const handleLanguage = (newLanguage)=>{
+    if(language != newLanguage){
+      return dispatch(changeLanguage(newLanguage))
+      // dispatch(alertMessage(true, false, "¡Uy! Lo siento, aún no he configurado la versión en inglés. ¡Inténtalo de nuevo pronto! | Oops! Sorry, I haven't set up the English version yet. Try again soon!."))
     }
   }  
+
+  const TEXTS = {
+    SPANISH: {
+      portfolio: "Portafolio",
+      startProject: "Iniciar proyecto",
+      languageLabel: "Idioma",
+      spanishOption: "🇪🇸 - Español",
+      englishOption: "🇺🇸 - Inglés",
+    },
+    ENGLISH: {
+      portfolio: "Portfolio",
+      startProject: "Start project",
+      languageLabel: "Language",
+      spanishOption: "🇪🇸 - Spanish",
+      englishOption: "🇺🇸 - English",
+    }
+  }
+
+  const t = TEXTS[language];
 
   return (
     <>
@@ -51,28 +67,40 @@ const NavBar =() => {
         {/* portfolio LINK */}
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link to="/portafolio" className="bg-transparent">Portafolio</Link>
+            <Link to="/portafolio" className="bg-transparent">
+              {t.portfolio}
+            </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link to="/contacto" className="bg-transparent">Iniciar proyecto</Link>
+            <Link to="/contacto" className="bg-transparent">
+            {t.startProject}
+            </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
         {/* language */}
         <NavigationMenuItem className="hidden md:block ">
-          <NavigationMenuTrigger className="bg-transparent cursor-pointer"><Languages className="m-2" size={18}/> Idioma</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="bg-transparent cursor-pointer"><Languages className="m-2" size={18}/>
+            {t.languageLabel}
+          </NavigationMenuTrigger>
           <NavigationMenuContent className="mt-10 border-2 ">
             <ul className="grid w-[150px] gap-4 ">
               <li>
                 <NavigationMenuLink asChild>
-                    <div className="font-medium cursor-pointer" onClick={handleLanguage}>🇪🇸 - Spanish</div>
+                    <div className="font-medium cursor-pointer flex flex-row justify-between items-center" onClick={()=>{handleLanguage('SPANISH')}}> 
+                        {t.spanishOption}
+                        {language === 'SPANISH' ? <Check size={16} className="ml-2 text-green-600"/> : null}
+                    </div>
                 </NavigationMenuLink>
 
                 <NavigationMenuLink asChild>
-                    <div className="font-medium cursor-pointer" onClick={handleLanguage}>🇺🇸 - English</div>
+                    <div className="font-medium cursor-pointer flex flex-row justify-between items-center" onClick={()=>{handleLanguage('ENGLISH')}}>
+                      {t.englishOption}
+                      {language === 'ENGLISH' ? <Check size={16} className="ml-2 text-green-600"/> : null}
+                    </div>
                 </NavigationMenuLink>
               </li>
             </ul>

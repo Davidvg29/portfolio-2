@@ -18,16 +18,15 @@ import {
 } from "@/components/ui/carousel"
 
 import { ArrowUpRight, Github  } from 'lucide-react';
+import { useSelector } from "react-redux";
 
 const DetailsCardProject = ({project}) => {
-    console.log(project);
-    
+    const language = useSelector((state) => state.language);
     const demos = Array.isArray(project.demo)
   ? project.demo
   : project.demo
   ? [project.demo]
   : []
-
 
     return ( 
         <div className="flex justify-center">
@@ -44,16 +43,22 @@ const DetailsCardProject = ({project}) => {
                             </CarouselContent>
                             {project.img.length > 1 ? (
                                 <>
-                                    <CarouselPrevious className="cursor-pointer absolute sm:left-10 left-2 top-1/2 -translate-y-1/2 z-50 p-2 rounded-full "/>
-                                    <CarouselNext className="cursor-pointer absolute sm:right-10 right-2 top-1/2 -translate-y-1/2 z-50 p-2 rounded-full " />
+                                    <CarouselPrevious className="cursor-pointer absolute sm:left-10 left-2 top-1/2 -translate-y-1/2 p-2 rounded-full "/>
+                                    <CarouselNext className="cursor-pointer absolute sm:right-10 right-2 top-1/2 -translate-y-1/2 p-2 rounded-full " />
                                 </>
                             ): null}
                         </Carousel>
                     </CardContent>
                     <CardHeader>
-                        <CardTitle className="text-2xl font-bold">{project.nombre}</CardTitle>
+                        <CardTitle className="text-2xl font-bold">
+                            {language === 'SPANISH' ? project.nombre : project.name}
+                        </CardTitle>
                         <p>{project.subtitle}</p>
-                        <CardDescription>{project.descripcion}</CardDescription>
+                        <CardDescription>
+                            {
+                                language === 'SPANISH' ? project.descripcion : project.description
+                            }
+                        </CardDescription>
                         <p>{project.technologies}</p>
                     </CardHeader>
                     <CardFooter className="mb-5 flex flex-wrap">
@@ -67,7 +72,7 @@ const DetailsCardProject = ({project}) => {
                                 rel="noopener noreferrer"
                                 className="flex items-center text-sm font-semibold"
                                 >
-                                Visitar proyecto {index + 1}
+                                {language === "SPANISH" ? "Visitar proyecto" : "Visit project"} {index + 1}
                                 <ArrowUpRight size={16} className="ml-1" />
                                 </a>
                             </Button>
@@ -80,7 +85,7 @@ const DetailsCardProject = ({project}) => {
                                 rel="noopener noreferrer"
                                 className="flex items-center text-sm font-semibold"
                             >
-                                Visitar proyecto
+                                {language === "SPANISH" ? "Visitar proyecto" : "Visit project"}
                                 <ArrowUpRight size={16} className="ml-1" />
                             </a>
                             </Button>

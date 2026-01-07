@@ -1,6 +1,7 @@
 import {CHANGE_LANGUAGE, ALERT_MESSAGE} from "./action-types"
 
 export const changeLanguage = (language)=>{
+    localStorage.setItem("david_portfolio_lang", language);
     return({
         type: CHANGE_LANGUAGE,
         payload: language
