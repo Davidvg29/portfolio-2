@@ -35,13 +35,15 @@ const HeroSection = ()=>{
                             }
                         </CardDescription>
                         <CardContent className="p-0 flex flex-col md:flex-row gap-4 md:items-center">
-                            <Link to="/contacto" className="pr-2 flex items-center"><Button>
-                                {
-                                    language === 'SPANISH' 
-                                    ? '¡Empecemos un proyecto!' 
-                                    : "Let's start a project!"
-                                }    
-                            </Button></Link>
+                            <Link to="/contacto" className="pr-2 flex items-center">
+                                <Button className="cursor-pointer">
+                                    {
+                                        language === 'SPANISH' 
+                                        ? '¡Empecemos un proyecto!' 
+                                        : "Let's start a project!"
+                                    }    
+                                </Button>
+                            </Link>
                             <a href="#aboutOurWork" className="pl-2 text-sm font-semibold">
                                 {
                                     language === 'SPANISH' 
