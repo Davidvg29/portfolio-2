@@ -10,7 +10,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 z-5 w-full bg-white/90 backdrop-blur-xs border-b shadow-xs px-5">
       <div className="h-20 md:p-10 flex items-center justify-between ">
         <Link to="/">
-          <p className="text-2xl font-bold tracking-tight text-balance">DAVID VALDEZ GRAMAJO</p>
+          <p className="text-2xl font-semibold tracking-tighter text-balance">DAVID VALDEZ GRAMAJO</p>
           {/* <span className="relative inline-block p-2">
               <span className="absolute inset-0 -skew-x-12 bg-primary rounded-md"></span>
               <span className="relative text-2xl font-bold tracking-tight text-balance">DAVID VALDEZ GRAMAJO</span>

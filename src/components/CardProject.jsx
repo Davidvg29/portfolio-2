@@ -33,7 +33,7 @@ const CardProject = ({project, index}) => {
                             <img className="w-full h-50 object-contain p-5 rounded-t-3xl" src={project.img[0]} alt="" />
                         </CardContent>
                         <CardHeader>
-                            <CardTitle className="text-2xl font-bold h-15 overflow-auto">
+                            <CardTitle className="text-2xl h-15 overflow-auto">
                                 {
                                     language === 'SPANISH' 
                                     ? project.nombre 

@@ -8,7 +8,7 @@ const ContactPage = ()=>{
 
     return(
        <MainLayout>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
+            <h2 className="text-4xl md:text-5xl mb-8 text-center">
                 {
                     languages === "SPANISH" 
                     ?  <>¿Listo para <span className="text-primary">comenzar</span> <br /> tu próximo proyecto?</>

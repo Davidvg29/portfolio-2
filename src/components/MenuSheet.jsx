@@ -52,6 +52,8 @@ export function MenuSheet() {
   const language = useSelector(state => state.language) || 'SPANISH';
   const t = TEXTS[language];
 
+  const [open, setOpen] = useState(false);
+
   // 2. LÓGICA DE CAMBIO DE IDIOMA
   const handleLanguage = (newLanguage)=>{
     if(language != newLanguage){
@@ -59,16 +61,17 @@ export function MenuSheet() {
       setTimeout(() => {
         dispatch(changeLanguage(newLanguage))
         setLoader(false)
+        setOpen(false)
       }, 500);
     }
   }  
 
   return (
     <div>
-      <Sheet>
+      <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild className="p-5">
           <Button variant="outline" className="border-none shadow-none">
-            <Menu className="w-6 h-6"/> {/* Quité los ! que pueden dar error de sintaxis en algunos linters */}
+            <Menu className="w-6 h-6" onClick={() => setOpen(true)}/> {/* Quité los ! que pueden dar error de sintaxis en algunos linters */}
           </Button>
         </SheetTrigger>
         
