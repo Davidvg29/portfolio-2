@@ -6,8 +6,10 @@ import ContactPage from './pages/ContactPage'
 import ProjectOnePage from './pages/ProjectsOnePage'
 import PageNotFound from './pages/PageNotFound'
 import AlertMessage from './components/AlertMessage'
+import { usePageTracking } from './hooks/usePageTracking'
 
 function App() {
+  usePageTracking()
   return (
     <div className='app'>
       <Routes>
