@@ -18,8 +18,8 @@ const AboutOurWork = ()=>{
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
                 {
                     language === 'SPANISH' 
-                    ? '¿Cómo te ayudo?' 
-                    : 'How can I help you?'
+                    ? <>¿Cómo <span className="text-primary">te ayudo?</span></>
+                    : <>How can I <span className="text-primary">help you?</span></>
                 }
             </h2>
             <h3 className="pr-5 mt-10">
@@ -32,7 +32,7 @@ const AboutOurWork = ()=>{
             <div className=" mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-3 place-items-center">
                 <Card className="w-full h-full rounded-3xl cursor-pointer shadow-lg hover:scale-102 transition delay-150 duration-300 ease-in-out">
                 <CardContent>
-                    <div className="bg-violet-400 w-12 h-12 rounded-full flex items-center justify-center">
+                    <div className="bg-primary w-12 h-12 rounded-full flex items-center justify-center">
                         <Palette className="text-white" size={26}/>
                     </div>
                 </CardContent>
@@ -56,7 +56,7 @@ const AboutOurWork = ()=>{
 
                 <Card className="w-full h-full rounded-3xl cursor-pointer shadow-lg hover:scale-102 transition delay-150 duration-300 ease-in-out">
                 <CardContent>
-                    <div className="bg-violet-400 w-12 h-12 rounded-full flex items-center justify-center">
+                    <div className="bg-primary w-12 h-12 rounded-full flex items-center justify-center">
                         <Cog  className="text-white" size={26}/>
                     </div>
                 </CardContent>
@@ -80,7 +80,7 @@ const AboutOurWork = ()=>{
 
                 <Card className="w-full h-full rounded-3xl cursor-pointer shadow-lg hover:scale-102 transition delay-150 duration-300 ease-in-out">
                 <CardContent>
-                    <div className="bg-violet-400 w-12 h-12 rounded-full flex items-center justify-center">
+                    <div className="bg-primary w-12 h-12 rounded-full flex items-center justify-center">
                         <Cloudy   className="text-white" size={26}/>
                     </div>
                 </CardContent>

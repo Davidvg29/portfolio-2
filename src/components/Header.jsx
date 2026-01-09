@@ -11,9 +11,13 @@ const Header = () => {
       <div className="h-20 md:p-10 flex items-center justify-between ">
         <Link to="/">
           <p className="text-2xl font-bold tracking-tight text-balance">DAVID VALDEZ GRAMAJO</p>
-          <p className="text-md">
+          {/* <span className="relative inline-block p-2">
+              <span className="absolute inset-0 -skew-x-12 bg-primary rounded-md"></span>
+              <span className="relative text-2xl font-bold tracking-tight text-balance">DAVID VALDEZ GRAMAJO</span>
+          </span> */}
+          {/* <p className="text-md">
             {language === 'SPANISH' ? 'Desarrollador de software' : 'Software Developer'}
-          </p>
+          </p> */}
         </Link>
         <NavBar/>
       </div>

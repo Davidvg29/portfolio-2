@@ -12,8 +12,8 @@ const LatestProjects = ()=>{
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
                 {
                     language === 'SPANISH' 
-                    ? <>Explora mis trabajos y <br /> últimos proyectos</> 
-                    : <>Explore my work and <br /> latest projects</>
+                    ? <>Explora mis trabajos y <br /> <span className="text-primary">últimos proyectos</span></> 
+                    : <>Explore my work and <br /> <span className="text-primary">latest projects</span></>
                 }
             </h2>
             {/* <h3 className="pr-5 mt-10">Desde la gestión de infraestructuras y la optimización de flujos de trabajo mediante software a medida, <br /> hasta la creación de landing pages para la presencia digital  conectando lógica de negocio <br />y la seguridad de datos con interfaces de usuario intuitivas y eficaces.</h3> */}
@@ -24,7 +24,7 @@ const LatestProjects = ()=>{
             </div>
             <div className="flex justify-center mt-10">
                 <Link to="/portafolio">
-                    <Button className="cursor-pointer">
+                    <Button className="cursor-pointer text-white">
                         {
                             language === 'SPANISH' 
                             ? 'Ver todos los proyectos' 

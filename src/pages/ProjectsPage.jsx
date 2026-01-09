@@ -11,8 +11,8 @@ const ProjectsPage = () => {
                 <h2 className="text-4xl md:text-5xl font-bold mb-8">
                     {
                         language === 'SPANISH'
-                        ? 'Mi Portafolio'
-                        : 'My Portfolio'
+                        ? <>Mi <span className="text-primary">Portafolio</span></>
+                        : <>My <span className="text-primary">Portfolio</span></>
                     }
                 </h2>
                 <h3 className="pr-5 mt-10">

@@ -126,7 +126,7 @@ const ContactForm = ()=>{
                         </div>
 
                         <div className="grid w-full items-center gap-3 mt-10 mb-5">
-                            <Button className="w-32 bg-white text-black hover:text-white cursor-pointer" onClick={handleSubmit}>
+                            <Button className="w-32 bg-primary cursor-pointer text-white" onClick={handleSubmit}>
                                 {
                                     language === "SPANISH" ? "Enviar" : "Send"
                                 }

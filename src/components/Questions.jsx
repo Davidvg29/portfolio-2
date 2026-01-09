@@ -30,8 +30,8 @@ const Questions = ()=>{
                     <h2 className="text-4xl md:text-5xl font-bold ">
                         {
                             language === 'SPANISH' 
-                            ? 'Preguntas Frecuentes' 
-                            : 'Frequently Asked Questions'
+                            ? <>Preguntas <span className="text-primary">Frecuentes</span></>
+                            : <>Frequently Asked <br/> <span className="text-primary">Questions</span></>
                         }
                     </h2>
                     <h3 className="pr-5 mt-10">
