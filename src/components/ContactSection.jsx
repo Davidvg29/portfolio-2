@@ -21,7 +21,7 @@ const ContactSection = ()=>{
                 <div className="flex flex-col md:flex-row justify-center p-8 sm:pl-14 sm:pr-14">
                     <div className="w-full md:w-1/2">
                         <CardHeader className="p-0">
-                            <CardTitle className="font-bold text-4xl md:text-5xl mb-2">
+                            <CardTitle className="font-extralight text-4xl md:text-5xl mb-2">
                                 {
                                 language === 'SPANISH' 
                                 ? <>Tu próxima gran idea <span className="text-primary ">empieza </span>aquí</> 

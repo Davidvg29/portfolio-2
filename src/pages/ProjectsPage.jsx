@@ -8,7 +8,7 @@ const ProjectsPage = () => {
     return ( 
         <MainLayout>
             <div className="mt-5 p-2 md:p-8">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8">
+                <h2 className="text-4xl md:text-5xl mb-8">
                     {
                         language === 'SPANISH'
                         ? <>Mi <span className="text-primary">Portafolio</span></>

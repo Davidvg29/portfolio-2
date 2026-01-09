@@ -15,7 +15,7 @@ const AboutOurWork = ()=>{
     
     return(
         <div className=" mt-15 p-2 md:p-8" id="aboutOurWork">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+            <h2 className="text-4xl md:text-5xl mb-8">
                 {
                     language === 'SPANISH' 
                     ? <>¿Cómo <span className="text-primary">te ayudo?</span></>
@@ -37,7 +37,7 @@ const AboutOurWork = ()=>{
                     </div>
                 </CardContent>
                 <CardHeader>
-                    <CardTitle className="text-2xl font-bold ">
+                    <CardTitle className="text-2xl ">
                         {
                             language === 'SPANISH'
                             ? 'Experiencias que Cautivan'
@@ -61,7 +61,7 @@ const AboutOurWork = ()=>{
                     </div>
                 </CardContent>
                 <CardHeader>
-                    <CardTitle className="text-2xl font-bold ">
+                    <CardTitle className="text-2xl">
                         {
                             language === 'SPANISH'
                             ? 'El Motor de tu Negocio'
@@ -85,7 +85,7 @@ const AboutOurWork = ()=>{
                     </div>
                 </CardContent>
                 <CardHeader>
-                    <CardTitle className="text-2xl font-bold ">
+                    <CardTitle className="text-2xl">
                         {
                             language === 'SPANISH'
                             ? 'Información Segura y Ordenada'

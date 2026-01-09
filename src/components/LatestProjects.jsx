@@ -9,7 +9,7 @@ const LatestProjects = ()=>{
 
     return(
         <div className="mt-10 p-2 md:p-8">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+            <h2 className="text-4xl md:text-5xl  mb-8">
                 {
                     language === 'SPANISH' 
                     ? <>Explora mis trabajos y <br /> <span className="text-primary">últimos proyectos</span></> 

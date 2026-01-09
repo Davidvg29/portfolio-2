@@ -20,15 +20,12 @@ const HeroSection = ()=>{
             <Card className="w-full max-w-6xl shadow-lg ">
                 <div className="flex flex-col md:flex-row justify-center p-8 sm:pl-14 sm:pr-14">
                     <div className="w-full md:w-1/2">
-                        <CardHeader className="p-0 text-4xl md:text-5xl font-bold mb-8">
+                        <CardHeader className="p-0 text-4xl md:text-6xl  mb-8">
                             {
                                 language === 'SPANISH' 
                                 ? <div>Hola, soy <span className="text-primary">David</span>
                                 . <br /> Desarrollador <br /> de Software.</div> 
-                                : <div>Hi, I'm <span className="relative inline-block p-2">
-                                        <span className="absolute inset-0 -skew-x-12 bg-primary rounded-md"></span>
-                                        <span className="relative"> David</span>
-                                    </span>. <br /> Software <br /> Developer.</div>
+                                : <div>Hi, I'm <span className="text-primary">David</span>. <br /> Software <br /> Developer.</div>
                             }
                         </CardHeader>
                         <CardDescription className="mb-8">
