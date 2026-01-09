@@ -49,7 +49,7 @@ const CardProject = ({project, index}) => {
                             </CardDescription>
                         </CardHeader>
                     <CardFooter className="mb-5">
-                        <p className="flex items-center text-sm font-semibold">
+                        <p className="flex items-center text-sm font-semibold text-primary">
                             {
                                 language === 'SPANISH'
                                 ? 'Ver proyecto'

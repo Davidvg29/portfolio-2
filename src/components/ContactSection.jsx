@@ -20,12 +20,14 @@ const ContactSection = ()=>{
             <Card className="w-full max-w-6xl shadow-lg">
                 <div className="flex flex-col md:flex-row justify-center p-8 sm:pl-14 sm:pr-14">
                     <div className="w-full md:w-1/2">
-                        <CardHeader className="text-4xl md:text-5xl font-bold p-0">
-                            {
+                        <CardHeader className="p-0">
+                            <CardTitle className="font-bold text-4xl md:text-5xl mb-2">
+                                {
                                 language === 'SPANISH' 
-                                ? 'Tu próxima gran idea empieza aquí' 
-                                : 'Your next big idea starts here.'
+                                ? <>Tu próxima gran idea <span className="text-primary ">empieza </span>aquí</> 
+                                : <>Your next big idea <span className="text-primary ">starts</span> here</>
                             }
+                            </CardTitle>
                         </CardHeader>
                         <CardDescription className="mb-8">
                             {
@@ -36,7 +38,7 @@ const ContactSection = ()=>{
                         </CardDescription>
                         <CardContent className="p-0 flex flex-col md:flex-row gap-4 md:items-center">
                             <Link to="/contacto" className="pr-2 flex items-center cursor-pointer">
-                                <Button className="cursor-pointer">
+                                <Button className="cursor-pointer text-white">
                                     {
                                         language === 'SPANISH' 
                                         ? 'Iniciar conversación' 

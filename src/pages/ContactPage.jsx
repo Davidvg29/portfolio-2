@@ -11,8 +11,8 @@ const ContactPage = ()=>{
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
                 {
                     languages === "SPANISH" 
-                    ?  <>¿Listo para comenzar <br /> tu próximo proyecto?</>
-                    : <>Ready to start <br/> your next project?</>
+                    ?  <>¿Listo para <span className="text-primary">comenzar</span> <br /> tu próximo proyecto?</>
+                    : <>Ready to <span className="text-primary">start</span> <br/> your next project?</>
                 }
             </h2>
             <ContactForm/>

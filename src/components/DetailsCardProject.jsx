@@ -83,7 +83,7 @@ const DetailsCardProject = ({project}) => {
                                 href={demos[0]}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center text-sm font-semibold"
+                                className="flex items-center text-white text-sm font-semibold"
                             >
                                 {language === "SPANISH" ? "Visitar proyecto" : "Visit project"}
                                 <ArrowUpRight size={16} className="ml-1" />

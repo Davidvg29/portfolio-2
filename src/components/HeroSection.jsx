@@ -23,8 +23,12 @@ const HeroSection = ()=>{
                         <CardHeader className="p-0 text-4xl md:text-5xl font-bold mb-8">
                             {
                                 language === 'SPANISH' 
-                                ? <>Hola, soy David. <br /> Desarrollador <br /> de Software.</> 
-                                : <>Hi, I'm David. <br /> Software <br /> Developer.</>
+                                ? <div>Hola, soy <span className="text-primary">David</span>
+                                . <br /> Desarrollador <br /> de Software.</div> 
+                                : <div>Hi, I'm <span className="relative inline-block p-2">
+                                        <span className="absolute inset-0 -skew-x-12 bg-primary rounded-md"></span>
+                                        <span className="relative"> David</span>
+                                    </span>. <br /> Software <br /> Developer.</div>
                             }
                         </CardHeader>
                         <CardDescription className="mb-8">
@@ -36,7 +40,7 @@ const HeroSection = ()=>{
                         </CardDescription>
                         <CardContent className="p-0 flex flex-col md:flex-row gap-4 md:items-center">
                             <Link to="/contacto" className="pr-2 flex items-center">
-                                <Button className="cursor-pointer">
+                                <Button className="cursor-pointer text-white">
                                     {
                                         language === 'SPANISH' 
                                         ? '¡Empecemos un proyecto!' 
